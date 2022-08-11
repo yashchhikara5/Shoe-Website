@@ -1,17 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Typewriter } from "react-simple-typewriter";
+import React from "react"
+import { Link, useLocation } from "react-router-dom"
+import { Typewriter } from "react-simple-typewriter"
 
-// import Typed from "react-typed";
+import { ROUTES, STRINGS } from "../scripts/constants"
+
 function Navbar() {
+  const { pathname } = useLocation()
+
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" id="my-navbar">
-          <Typewriter typeSpeed={150} words={["Shoewear"]} />
-        </a>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <Link className="navbar-brand" id="my-navbar" to={ROUTES.home.path}>
+          <Typewriter typeSpeed={150} words={[STRINGS.shoeWear]} />
+        </Link>
+        {/* <span className="navbar-brand" href="#" id="my-navbar">
+        </span> */}
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -19,34 +24,36 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
-                <Typewriter typeSpeed={150} words={["Account"]} />
-              </a>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  pathname === ROUTES.products.path ? "active" : ""
+                }`}
+                to={ROUTES.products.path}
+              >
+                {ROUTES.products.title}
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                {/* <Link activeClass="active" smooth spy to="Items"> */}
-                <Typewriter typeSpeed={150} words={["Items"]} />
-                {/* </Link> */}
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
-                {/* <Link activeClass="active" smooth spy to="Cart"> */}
-                <Typewriter typeSpeed={150} words={["Cart"]} />
-                {/* </Link>{" "} */}
-              </a>
+
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  pathname === ROUTES.cart.path ? "active" : ""
+                }`}
+                to={ROUTES.cart.path}
+              >
+                {ROUTES.cart.title}
+              </Link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

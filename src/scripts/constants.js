@@ -1,11 +1,11 @@
-const MAPPING = [
+export const MAPPING = [
   {
     id: 1,
     src: "http://cdn.shopify.com/s/files/1/0324/6781/2487/products/nike-air-max-2013-running-554886701-2_1024x.png?v=1593488389",
     price: 423,
     rating: "⭐⭐⭐⭐⭐",
     off: "10% off",
-    Name: "Light Green Sported Shoes",
+    name: "Light Green Sported Shoes",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const MAPPING = [
     price: 550,
     rating: "⭐⭐⭐⭐",
     off: "50% off",
-    Name: "Black Blue Sported Shoes",
+    name: "Black Blue Sported Shoes",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const MAPPING = [
     price: 529,
     rating: "⭐⭐⭐⭐",
     off: "40% off",
-    Name: "Women Wear Pink & White Shoes",
+    name: "Women Wear Pink & White Shoes",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const MAPPING = [
     price: 700,
     rating: "⭐⭐⭐⭐⭐",
     off: "65% off",
-    Name: "Black & White Sneakers",
+    name: "Black & White Sneakers",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const MAPPING = [
     price: 344,
     rating: "⭐⭐⭐⭐⭐",
     off: "40% off",
-    Name: "Green Sportswear",
+    name: "Green Sportswear",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const MAPPING = [
     price: 620,
     rating: "⭐⭐⭐⭐",
     off: "50% off",
-    Name: "Multicoloured Sportswear",
+    name: "Multicoloured Sportswear",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const MAPPING = [
     price: 700,
     rating: "⭐⭐⭐⭐",
     off: "20% off",
-    Name: "Brown Layered Boots",
+    name: "Brown Layered Boots",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const MAPPING = [
     price: 720,
     rating: "⭐⭐⭐⭐⭐",
     off: "30% off",
-    Name: "Red & White Boots",
+    name: "Red & White Boots",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ const MAPPING = [
     price: 344,
     rating: "⭐⭐⭐⭐",
     off: "50% off",
-    Name: "Gray & White Sneakers",
+    name: "Gray & White Sneakers",
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ const MAPPING = [
     price: 344,
     rating: "⭐⭐⭐⭐⭐",
     off: "40% off",
-    Name: "White layered Sneakers",
+    name: "White layered Sneakers",
   },
   {
     id: 11,
@@ -85,7 +85,7 @@ const MAPPING = [
     price: 344,
     rating: "⭐⭐⭐⭐",
     off: "30% off",
-    Name: "Blue dark Sportswear",
+    name: "Blue dark Sportswear",
   },
   {
     id: 12,
@@ -93,7 +93,7 @@ const MAPPING = [
     price: 344,
     rating: "⭐⭐⭐⭐",
     off: "60% off",
-    Name: "Light Blue Sportswear",
+    name: "Light Blue Sportswear",
   },
   {
     id: 13,
@@ -101,7 +101,7 @@ const MAPPING = [
     price: 789,
     rating: "⭐⭐⭐⭐",
     off: "10% off",
-    Name: "Black Pastel Grip Shoes",
+    name: "Black Pastel Grip Shoes",
   },
   {
     id: 14,
@@ -109,7 +109,7 @@ const MAPPING = [
     price: 900,
     rating: "⭐⭐⭐⭐",
     off: "10% off",
-    Name: "Black Pastel Grip Shoes",
+    name: "Black Pastel Grip Shoes",
   },
   {
     id: 15,
@@ -117,7 +117,7 @@ const MAPPING = [
     price: 560,
     rating: "⭐⭐⭐⭐⭐",
     off: "10% off",
-    Name: "Black Pastel Grip Shoes",
+    name: "Black Pastel Grip Shoes",
   },
   {
     id: 16,
@@ -125,8 +125,23 @@ const MAPPING = [
     price: 560,
     rating: "⭐⭐⭐⭐",
     off: "10% off",
-    Name: "Black Pastel Grip Shoes",
+    name: "Black Pastel Grip Shoes",
   },
-];
+]
 
-export default MAPPING;
+export const SHOE_SIZES = [
+  { label: 7, value: 7 },
+  { label: 8, value: 8 },
+  { label: 9, value: 9 },
+]
+
+export const STRINGS = {
+  shoeWear: "ShoeWear",
+  size: "Size",
+}
+
+export const ROUTES = {
+  home: { path: "/", title: "Home" },
+  products: { path: "/products", title: "Products" },
+  cart: { path: "/cart", title: "Cart" },
+}

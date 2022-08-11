@@ -1,9 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ##### Variables ##### */
 :root {
   --border-radius-primary: 2rem;
   --border-radius-secondary: 1rem;
   --margin: 0.25rem;
 }
+
+/* ##### Common ##### */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: black;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.flex-stretch {
+  flex: 1 0 0;
+}
+
+/* ##### Navbar - Start ##### */
+
 .navbar {
   background: linear-gradient(
       to bottom,
@@ -18,78 +47,53 @@
       #989898;
   background-blend-mode: multiply, multiply;
 }
-button {
-  background-color: black;
-}
-* {
-  box-sizing: border-box;
+
+.navbar-brand {
+  font-size: 56px;
+  font-weight: bold;
+  font-family: monospace;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-.responsive {
-  width: 100%;
-  height: 630px;
-  box-shadow: 5px 2px 12px -1px rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 5px 2px 12px -1px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 5px 2px 12px -1px rgba(0, 0, 0, 0.8);
-}
-.carosel1 {
-  font-weight: bold;
-  font-size: 2vw;
-  color: white;
-  text-align: start;
-  font-size: 20px;
-  position: relative;
-  top: 170px;
-  left: 40px;
-  font-family: "Courier New", Courier, monospace;
-}
-.carosel1:hover {
-  color: black;
-}
-.carosel2:hover {
-  color: black;
-}
-.carosel2 {
-  text-align: end;
-  font-size: 2vw;
-  font-weight: bold;
-  font-size: 20px;
-  position: relative;
-  color: white;
-  bottom: 200px;
-  right: 100px;
-  font-family: monospace;
-}
-.names {
-  font-family: monospace;
-  font-weight: bold;
-}
-.symbol {
-  width: 30px;
-  padding-left: 4px;
-}
-.main_class:hover {
-  border: 1px solid lightgray;
-}
-.dropdown-toggle {
-  font-family: monospace;
-  font-weight: bold;
-  color: red;
-}
-.navbar-brand {
-  font-size: 60px;
-  font-weight: bold;
-  font-family: monospace;
-}
 .nav-item .nav-link {
   font-size: 20px;
   font-weight: bold;
   font-family: monospace;
 }
+
+/* ##### Navbar - End ##### */
+
+.responsive {
+  width: 100%;
+  /* height: 630px; */
+  box-shadow: 5px 2px 12px -1px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 5px 2px 12px -1px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 5px 2px 12px -1px rgba(0, 0, 0, 0.8);
+}
+
+.names {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.symbol {
+  width: 30px;
+  padding-left: 4px;
+}
+
+.product__item:hover {
+  border: 1px solid lightgray;
+}
+
+.dropdown-toggle {
+  color: red;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
 .button {
   background-color: #ced89e;
 }
@@ -103,9 +107,11 @@ body {
   font-size: 0.75rem;
   font-weight: bold;
 }
+
 .photo {
   height: 165px;
 }
+
 .card .card-body .photo {
   border-radius: var(--border-radius-secondary);
 }
@@ -144,7 +150,7 @@ h2 {
   margin: 30px;
 }
 
-#pricing {
+#products {
   background-repeat: no-repeat;
   padding: 40px;
   text-align: center;
@@ -172,10 +178,12 @@ h2 {
 .card__container:not(:last-child) {
   margin-bottom: 12px;
 }
+
 .off-season {
   color: red;
   font-weight: 500;
 }
+
 .shop-item__cart__container {
   display: flex;
   flex-direction: column;
@@ -191,6 +199,7 @@ h2 {
 .shop-item__cart__container .btn-group {
   max-width: 200px;
 }
+
 .shoe {
   margin-top: 9px;
   margin-bottom: 13px;
@@ -200,6 +209,7 @@ h2 {
   color: white;
   border-radius: 5px;
 }
+
 .counter-btn-group {
   width: 120px;
   font-size: 14px;
@@ -237,10 +247,12 @@ h2 {
   padding: 1rem;
   margin: 0 1rem;
 }
+
 .your-cart {
   font-family: caveat;
   font-weight: bold;
 }
+
 .your-cart__container {
   color: #455a64;
   font-size: 2.5rem;
@@ -285,16 +297,20 @@ h2 {
   display: flex;
   flex-direction: row;
 }
-.Background {
+
+.footer {
   background-color: #003865;
   color: white;
   font-weight: bold;
   text-align: center;
+  padding: 1rem;
 }
-.foot_style {
+
+.footer__item {
   margin: 10px;
   text-align: center;
 }
+
 .fa-brands {
   margin: 10px;
 }

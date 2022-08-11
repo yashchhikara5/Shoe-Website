@@ -1,54 +1,55 @@
-import React from "react";
-function ShopItem({
+import React from "react"
+
+function CartItem({
   id: productId,
   imgSrc,
-  removeItem,
+  name,
   prices,
+  removeItem,
   setCart,
-  Name,
 }) {
-  const [count, setCount] = React.useState(1);
+  const [count, setCount] = React.useState(1)
 
   function increment() {
-    setCount(count + 1);
+    setCount(count + 1)
     setCart((prev) => {
-      const currentProduct = prev.find((usePrev) => usePrev.id === productId);
+      const currentProduct = prev.find((usePrev) => usePrev.id === productId)
       const currentProductIdx = prev.findIndex(
         (usePrev) => usePrev.id === currentProduct.id
-      );
+      )
       if (currentProduct && currentProductIdx > -1) {
-        const tempPrev = [...prev];
+        const tempPrev = [...prev]
         tempPrev[currentProductIdx].quantity =
-          tempPrev[currentProductIdx].quantity + 1;
-        return tempPrev;
+          tempPrev[currentProductIdx].quantity + 1
+        return tempPrev
       }
-      return prev;
-    });
+      return prev
+    })
   }
 
   function decrement() {
     if (count > 1) {
-      setCount(count - 1);
+      setCount(count - 1)
       setCart((prev) => {
-        const currentProduct = prev.find((usePrev) => usePrev.id === productId);
+        const currentProduct = prev.find((usePrev) => usePrev.id === productId)
         const currentProductIdx = prev.findIndex(
           (usePrev) => usePrev.id === currentProduct.id
-        );
+        )
         if (currentProduct && currentProductIdx > -1) {
-          const tempPrev = [...prev];
+          const tempPrev = [...prev]
           if (tempPrev[currentProductIdx].quantity > 1) {
             tempPrev[currentProductIdx].quantity =
-              tempPrev[currentProductIdx].quantity - 1;
-            return tempPrev;
+              tempPrev[currentProductIdx].quantity - 1
+            return tempPrev
           }
         }
-        return prev;
-      });
+        return prev
+      })
     }
   }
 
   function remove() {
-    removeItem(productId);
+    removeItem(productId)
   }
 
   return (
@@ -56,7 +57,7 @@ function ShopItem({
       <div className="col-12 shop-item__container">
         <div className="shop-item__cart__container">
           <img alt="..." className="shop-item__cart__photo" src={imgSrc} />
-          <p className="names">{Name}</p>
+          <p className="names">{name}</p>
           <div
             className="btn-group counter-btn-group"
             role="group"
@@ -95,14 +96,13 @@ function ShopItem({
         <div className="price__container">₹{count * prices}.00</div>
       </div>
     </div>
-  );
+  )
 }
-export default ShopItem;
-// 1.Authentication
-// 2 SignIn, SignUp,
-// 7. Automatic SignIn
 
-// Frontend
-// Size display in Cart what is selected by the user
-// On Cliking on button display Your produt is added in cart
-// Clicking on navbar links move to that section using routing
+export default CartItem
+
+/*
+  1. Authentication
+  2. SignIn, SignUp
+  3. Automatic SignIn
+*/
