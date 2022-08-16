@@ -1,6 +1,6 @@
 import React from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-
+import Account from "./components/Account"
 import Carousel from "./components/Carousel"
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
@@ -15,6 +15,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path={ROUTES.home.path} element={<Carousel />} />
+        </Routes>
+        <Routes>
+          <Route path={ROUTES.Account.path} element={<Account />} />
         </Routes>
         <Routes>
           <Route path={ROUTES.products.path} element={<Products />} />

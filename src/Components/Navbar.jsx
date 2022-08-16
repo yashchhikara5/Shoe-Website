@@ -13,8 +13,6 @@ function Navbar() {
         <Link className="navbar-brand" id="my-navbar" to={ROUTES.home.path}>
           <Typewriter typeSpeed={150} words={[STRINGS.shoeWear]} />
         </Link>
-        {/* <span className="navbar-brand" href="#" id="my-navbar">
-        </span> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -28,6 +26,16 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
+          <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  pathname === ROUTES.Account.path ? "active" : ""
+                }`}
+                to={ROUTES.Account.path}
+              >
+                {ROUTES.Account.title}
+              </Link>
+            </li>
             <li className="nav-item">
               <Link
                 className={`nav-link ${

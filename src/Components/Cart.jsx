@@ -1,19 +1,19 @@
-import CartItem from "./CartItem"
+import CartItem from "./CartItem";
 
 function Cart({ cart: cartItems, removeItem, setCart }) {
   function getTotalPrice() {
-    const INITIAL_VALUE = { quantity: 0, price: 0 }
+    const INITIAL_VALUE = { quantity: 0, price: 0 };
     const totalPrice = cartItems.reduce((prev, curr) => {
       return {
         price: prev.quantity * prev.price + curr.quantity * curr.price,
         quantity: 1,
-      }
-    }, INITIAL_VALUE)
-    return totalPrice
+      };
+    }, INITIAL_VALUE);
+    return totalPrice;
   }
 
   return (
-    <div className="flex-stretch">
+    <div>
       <div className="your-cart__container">
         <span className="your-cart">Your Cart</span>
       </div>
@@ -40,6 +40,6 @@ function Cart({ cart: cartItems, removeItem, setCart }) {
         </>
       )}
     </div>
-  )
+  );
 }
-export default Cart
+export default Cart;

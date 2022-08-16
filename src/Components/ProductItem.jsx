@@ -1,18 +1,12 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import { SHOE_SIZES, STRINGS } from "../scripts/constants"
+import { SHOE_SIZES, STRINGS } from "../scripts/constants";
 
 function ProductItem({ addItem, id, mapItem, name, off, price, rating, src }) {
-  const [size, setSize] = useState(STRINGS.size)
-
-  const handleSizeClick = (size) => {
-    if (!size && typeof size !== "number") {
-      return
-    }
-
-    setSize(size)
+  const [size, setSize] = useState(STRINGS.size);
+  function handleSizeClick(size) {
+    setSize(size);
   }
-
   return (
     <>
       <div className="col-lg-3 col-md-4 product__item">
@@ -58,7 +52,7 @@ function ProductItem({ addItem, id, mapItem, name, off, price, rating, src }) {
         </button>
       </div>
     </>
-  )
+  );
 }
 
-export default ProductItem
+export default ProductItem;
