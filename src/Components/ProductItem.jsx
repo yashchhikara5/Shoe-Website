@@ -11,7 +11,7 @@ function ProductItem({ addItem, id, mapItem, name, off, price, rating, src }) {
     <>
       <div className="col-lg-3 col-md-4 product__item">
         <div>
-          <img alt="..." className="photo" src={src} />
+          <img className="photo" src={src} />
           <p className="names">{name}</p>
           <div className="dropdown">
             <button
