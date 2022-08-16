@@ -33,7 +33,7 @@ function Carousel() {
         <div class="carousel-item active">
           <img
             className="responsive"
-            src="https://mycodelesswebsite.com/wp-content/uploads/2019/12/Shoes-Store-Website-Design-1200x720.jpg"
+            src="https://img.freepik.com/free-vector/pair-leather-sports-shoes-wood-background_1284-17526.jpg?w=826&t=st=1660671725~exp=1660672325~hmac=1d783e20c6e70e367de8f37c29daa641fda6e5481f65bc873ab6646cac1f3b2f"
           />
         </div>
         <div class="carousel-item">
@@ -45,7 +45,7 @@ function Carousel() {
         <div class="carousel-item">
           <img
             className="responsive"
-            src="https://img.freepik.com/free-vector/pair-leather-sports-shoes-wood-background_1284-17526.jpg?w=826&t=st=1660671725~exp=1660672325~hmac=1d783e20c6e70e367de8f37c29daa641fda6e5481f65bc873ab6646cac1f3b2f"
+            src="https://mycodelesswebsite.com/wp-content/uploads/2019/12/Shoes-Store-Website-Design-1200x720.jpg"
           />
         </div>
       </div>
