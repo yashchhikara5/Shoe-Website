@@ -1,4 +1,8 @@
 import React from "react";
+import Carousel1 from "../Images/Carousel1.jpg";
+import Carousel2 from "../Images/Carousel2.jpg";
+import Carousel3 from "../Images/Carousel3.jpg";
+
 function Carousel() {
   return (
     <div
@@ -31,22 +35,13 @@ function Carousel() {
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            className="responsive"
-            src="https://img.freepik.com/free-vector/pair-leather-sports-shoes-wood-background_1284-17526.jpg?w=826&t=st=1660671725~exp=1660672325~hmac=1d783e20c6e70e367de8f37c29daa641fda6e5481f65bc873ab6646cac1f3b2f"
-          />
+          <img className="responsive" src={Carousel1} />
         </div>
         <div class="carousel-item">
-          <img
-            className="responsive"
-            src="https://img.freepik.com/free-psd/colorful-slip-mockup-streetwear-sneakers-fashion_53876-98735.jpg?w=2000"
-          />
+          <img className="responsive" src={Carousel2} />
         </div>
         <div class="carousel-item">
-          <img
-            className="responsive"
-            src="https://mycodelesswebsite.com/wp-content/uploads/2019/12/Shoes-Store-Website-Design-1200x720.jpg"
-          />
+          <img className="responsive" src={Carousel3} />
         </div>
       </div>
       <button
