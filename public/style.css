@@ -102,10 +102,6 @@ button {
 
 .photo {
   height: 165px;
-  transition: transform 0.5s;
-}
-.photo:hover {
-  transform: scale(0.5); 
 }
 .card .card-body .photo {
   border-radius: var(--border-radius-secondary);
@@ -284,7 +280,6 @@ h2 {
   width: 100%;
   max-width: 1530px;
   height: 600px;
-
 }
 .y {
   align-items: center;
@@ -313,4 +308,37 @@ h2 {
 
 .fa-brands {
   margin: 10px;
+}
+/* Account  */
+.account{
+  margin-top: 88px;
+}
+form {
+  padding: 20px 0;
+  position: relative;
+}
+form input {
+  border: 1px solid lightgray;
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+}
+
+form button {
+  appearance: none;
+  outline: 0;
+  border: 0;
+  padding: 10px 15px;
+  margin-bottom: 45px;
+  color: #5090a3;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 18px;
+}
+.button_align{
+  text-align: center;
 }
