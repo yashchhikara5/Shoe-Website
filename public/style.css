@@ -105,7 +105,7 @@ button {
   transition: transform 0.5s;
 }
 .photo:hover {
-  transform: scale(0.5); 
+  transform: scale(0.5);
 }
 .card .card-body .photo {
   border-radius: var(--border-radius-secondary);
@@ -228,12 +228,17 @@ h2 {
 .price__container {
   align-items: center;
   display: flex;
+  flex-direction: column;
   flex-basis: 60px;
   font-size: 1.25rem;
   font-weight: bold;
   height: 150px;
   justify-content: center;
   text-align: center;
+}
+
+.price__container .price__total {
+  white-space: pre;
 }
 
 .cart__container {
@@ -284,7 +289,6 @@ h2 {
   width: 100%;
   max-width: 1530px;
   height: 600px;
-
 }
 .y {
   align-items: center;

@@ -2,20 +2,22 @@ import ProductItem from "./ProductItem"
 
 import { MAPPING } from "../scripts/constants"
 
-function Products() {
+function Products({ cart, setCart }) {
   return (
     <section id="products">
       <div className="row">
         {MAPPING.map((useMapItem) => {
           return (
             <ProductItem
-              name={useMapItem.name}
+              cart={cart}
               id={useMapItem.id}
               key={useMapItem.id}
               mapItem={useMapItem}
+              name={useMapItem.name}
               off={useMapItem.off}
               price={useMapItem.price}
               rating={useMapItem.rating}
+              setCart={setCart}
               src={useMapItem.src}
             />
           )
@@ -24,4 +26,4 @@ function Products() {
     </section>
   )
 }
-export default Products;
+export default Products

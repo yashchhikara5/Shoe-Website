@@ -1,4 +1,3 @@
-import React from "react";
 function Account() {
   return (
     <div>
@@ -10,9 +9,11 @@ function Account() {
         <input type="password" placeholder="Password"></input>
       </div>
       <input type="submit" value="LOG IN"></input>
+      <br />
       Already have an account?
       <input type="submit" value="Sign Up"></input>
     </div>
-  );
+  )
 }
-export default Account;
+
+export default Account
