@@ -1,17 +1,66 @@
-import { useState } from "react";
+import { useState } from "react"
 
-import { SHOE_SIZES, STRINGS } from "../scripts/constants";
+import { formatPriceToStr, SHOE_SIZES, STRINGS } from "../scripts/constants"
+import { calculateSellingPrice } from "../scripts/helpers"
 
-function ProductItem({ addItem, id, mapItem, name, off, price, rating, src }) {
-  const [size, setSize] = useState(STRINGS.size);
-  function handleSizeClick(size) {
-    setSize(size);
+const SIZE_ERROR = "Please select size"
+
+function ProductItem({ cart, id, name, off, price, rating, setCart, src }) {
+  const [size, setSize] = useState(STRINGS.size)
+  const [sizeError, setSizeError] = useState("")
+
+  const offPercentage = parseFloat(off)
+  const sellingPrice = calculateSellingPrice(price, offPercentage)
+
+  const getDoesProductAlreadyExistInCart = (product) => {
+    return !!cart?.find((useCart) => useCart.id === product.id)
   }
+
+  const handleAddToCart = () => {
+    if (!size || typeof size !== "number") {
+      setSizeError(SIZE_ERROR)
+      return
+    }
+
+    const product = {
+      discount: price - sellingPrice,
+      id,
+      name,
+      price,
+      sellingPrice,
+      size,
+      src,
+    }
+
+    setCart((prev) => {
+      const doesProductAlreadyExistInCart = getDoesProductAlreadyExistInCart(
+        prev,
+        product
+      )
+
+      if (!doesProductAlreadyExistInCart) {
+        return [...prev, product]
+      }
+
+      return prev
+    })
+  }
+
+  const handleSizeClick = (size) => {
+    if (sizeError) {
+      setSizeError("")
+    }
+
+    setSize(size)
+  }
+
+  const doesProductAlreadyExistInCart = getDoesProductAlreadyExistInCart({ id })
+
   return (
     <>
       <div className="col-lg-3 col-md-4 product__item">
         <div>
-          <img className="photo" src={src} />
+          <img alt="..." className="photo" src={src} />
           <p className="names">{name}</p>
           <div className="dropdown">
             <button
@@ -36,23 +85,40 @@ function ProductItem({ addItem, id, mapItem, name, off, price, rating, src }) {
               ))}
             </ul>
           </div>
-          <p className="pri">
-            ₹{price}.00 <span className="off-season">({off})</span>
-          </p>
+          <div className="pri">
+            <s>{formatPriceToStr(price)}</s>{" "}
+            <span>{formatPriceToStr(sellingPrice)}</span>{" "}
+            <div>
+              <span className="off-season">({off})</span>
+            </div>
+          </div>
           {rating}
         </div>
-        <button
-          onClick={() => addItem(mapItem)}
-          value={id}
-          type="button"
-          className="shoe"
-        >
-          Add to Cart
-          <i className="fas fa-shopping-cart" />
-        </button>
+
+        {doesProductAlreadyExistInCart ? (
+          <>
+            <p className="text-success mt-3">Product already exists in cart</p>
+          </>
+        ) : (
+          <button
+            onClick={() => handleAddToCart()}
+            value={id}
+            type="button"
+            className="shoe"
+          >
+            Add to Cart
+            <i className="fas fa-shopping-cart" />
+          </button>
+        )}
+
+        {sizeError && (
+          <div className="mb-3 text-danger">
+            <small>{sizeError}</small>
+          </div>
+        )}
       </div>
     </>
-  );
+  )
 }
 
-export default ProductItem;
+export default ProductItem

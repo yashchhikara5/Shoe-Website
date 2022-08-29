@@ -103,6 +103,7 @@ button {
 .photo {
   height: 165px;
 }
+
 .card .card-body .photo {
   border-radius: var(--border-radius-secondary);
 }
@@ -224,12 +225,17 @@ h2 {
 .price__container {
   align-items: center;
   display: flex;
+  flex-direction: column;
   flex-basis: 60px;
   font-size: 1.25rem;
   font-weight: bold;
   height: 150px;
   justify-content: center;
   text-align: center;
+}
+
+.price__container .price__total {
+  white-space: pre;
 }
 
 .cart__container {
@@ -310,7 +316,7 @@ h2 {
   margin: 10px;
 }
 /* Account  */
-.account{
+.account {
   margin-top: 88px;
 }
 form {
@@ -339,6 +345,6 @@ form button {
   width: 250px;
   font-size: 18px;
 }
-.button_align{
+.button_align {
   text-align: center;
 }

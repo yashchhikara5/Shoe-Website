@@ -1,12 +1,16 @@
 import React from "react"
+import { formatPriceToStr } from "../scripts/constants"
 
 function CartItem({
   id: productId,
   imgSrc,
   name,
-  prices,
+  price,
   removeItem,
   setCart,
+  size,
+  discount,
+  sellingPrice,
 }) {
   const [count, setCount] = React.useState(1)
 
@@ -20,7 +24,7 @@ function CartItem({
       if (currentProduct && currentProductIdx > -1) {
         const tempPrev = [...prev]
         tempPrev[currentProductIdx].quantity =
-          tempPrev[currentProductIdx].quantity + 1
+          (tempPrev[currentProductIdx].quantity || 0) + 1
         return tempPrev
       }
       return prev
@@ -39,7 +43,7 @@ function CartItem({
           const tempPrev = [...prev]
           if (tempPrev[currentProductIdx].quantity > 1) {
             tempPrev[currentProductIdx].quantity =
-              tempPrev[currentProductIdx].quantity - 1
+              (tempPrev[currentProductIdx].quantity || 0) - 1
             return tempPrev
           }
         }
@@ -57,7 +61,7 @@ function CartItem({
       <div className="col-12 shop-item__container">
         <div className="shop-item__cart__container">
           <img alt="..." className="shop-item__cart__photo" src={imgSrc} />
-          <p className="names">{name}</p>
+          <p className="names">{`${name} - Size - ${size}`}</p>
           <div
             className="btn-group counter-btn-group"
             role="group"
@@ -93,7 +97,14 @@ function CartItem({
           </button>
         </div>
 
-        <div className="price__container">₹{count * prices}.00</div>
+        <div className="price__container">
+          <s className="me-1">{formatPriceToStr(price)}</s>
+          <div>
+            <span className="price__total">{`${formatPriceToStr(
+              sellingPrice
+            )} * ${count} = ${formatPriceToStr(count * sellingPrice)}`}</span>
+          </div>
+        </div>
       </div>
     </div>
   )

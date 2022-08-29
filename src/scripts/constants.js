@@ -41,15 +41,15 @@ export const MAPPING = [
   },
   {
     id: 6,
-    src: "https://freepngimg.com/thumb/categories/1535.png",
+    src: "https://clarks.gumlet.io/product/5059304242512/300/5059304242451_1.jpg?compress=true&q=70",
     price: 620,
     rating: "⭐⭐⭐⭐",
     off: "50% off",
-    name: "Multicoloured Sportswear",
+    name: "Hero Air Lace White Leather ",
   },
   {
     id: 7,
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTATgjt_hWtmcIFYv-6HcEtdPhzEXIFZ061_A&usqp=CAU",
+    src: "https://clarks.gumlet.io/product/5059680487828/300/5059680487828_1.jpg?compress=true&q=70",
     price: 700,
     rating: "⭐⭐⭐⭐",
     off: "20% off",
@@ -57,11 +57,11 @@ export const MAPPING = [
   },
   {
     id: 8,
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGcKWoRTNz186SoKoPcIfrhD2jTSKzMKiklg&usqp=CAU",
+    src: "https://clarks.gumlet.io/product/5059304491637/300/5059304491637_1.jpg?compress=true&q=70",
     price: 720,
     rating: "⭐⭐⭐⭐⭐",
     off: "30% off",
-    name: "Red & White Boots",
+    name: "Cambro Lace Black Nubuck",
   },
   {
     id: 9,
@@ -127,22 +127,26 @@ export const MAPPING = [
     off: "10% off",
     name: "Black Pastel Grip Shoes",
   },
-];
+]
+
+export const formatPriceToStr = (price) => {
+  return `₹${parseInt(price)}.00`
+}
 
 export const SHOE_SIZES = [
   { label: 7, value: 7 },
   { label: 8, value: 8 },
   { label: 9, value: 9 },
-];
+]
 
 export const STRINGS = {
   shoeWear: "ShoeWear",
   size: "Size",
-};
+}
 
 export const ROUTES = {
   home: { path: "/", title: "Home" },
   Account: { path: "/account", title: "Account" },
   products: { path: "/products", title: "Products" },
   cart: { path: "/cart", title: "Cart" },
-};
+}
