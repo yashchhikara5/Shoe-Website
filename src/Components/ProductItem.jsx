@@ -1,25 +1,25 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import { formatPriceToStr, SHOE_SIZES, STRINGS } from "../scripts/constants"
-import { calculateSellingPrice } from "../scripts/helpers"
+import { formatPriceToStr, SHOE_SIZES, STRINGS } from "../scripts/constants";
+import { calculateSellingPrice } from "../scripts/helpers";
 
-const SIZE_ERROR = "Please select size"
+const SIZE_ERROR = "Please select size";
 
 function ProductItem({ cart, id, name, off, price, rating, setCart, src }) {
-  const [size, setSize] = useState(STRINGS.size)
-  const [sizeError, setSizeError] = useState("")
+  const [size, setSize] = useState(STRINGS.size);
+  const [sizeError, setSizeError] = useState("");
 
-  const offPercentage = parseFloat(off)
-  const sellingPrice = calculateSellingPrice(price, offPercentage)
+  const offPercentage = parseFloat(off);
+  const sellingPrice = calculateSellingPrice(price, offPercentage);
 
   const getDoesProductAlreadyExistInCart = (product) => {
-    return !!cart?.find((useCart) => useCart.id === product.id)
-  }
+    return !!cart?.find((useCart) => useCart.id === product.id);
+  };
 
   const handleAddToCart = () => {
     if (!size || typeof size !== "number") {
-      setSizeError(SIZE_ERROR)
-      return
+      setSizeError(SIZE_ERROR);
+      return;
     }
 
     const product = {
@@ -30,31 +30,33 @@ function ProductItem({ cart, id, name, off, price, rating, setCart, src }) {
       sellingPrice,
       size,
       src,
-    }
+    };
 
     setCart((prev) => {
       const doesProductAlreadyExistInCart = getDoesProductAlreadyExistInCart(
         prev,
         product
-      )
+      );
 
       if (!doesProductAlreadyExistInCart) {
-        return [...prev, product]
+        return [...prev, product];
       }
 
-      return prev
-    })
-  }
+      return prev;
+    });
+  };
 
   const handleSizeClick = (size) => {
     if (sizeError) {
-      setSizeError("")
+      setSizeError("");
     }
 
-    setSize(size)
-  }
+    setSize(size);
+  };
 
-  const doesProductAlreadyExistInCart = getDoesProductAlreadyExistInCart({ id })
+  const doesProductAlreadyExistInCart = getDoesProductAlreadyExistInCart({
+    id,
+  });
 
   return (
     <>
@@ -97,7 +99,7 @@ function ProductItem({ cart, id, name, off, price, rating, setCart, src }) {
 
         {doesProductAlreadyExistInCart ? (
           <>
-            <p className="text-success mt-3">Product already exists in cart</p>
+            <p className="text-success mt-3">Product is added to cart!!</p>
           </>
         ) : (
           <button
@@ -118,7 +120,7 @@ function ProductItem({ cart, id, name, off, price, rating, setCart, src }) {
         )}
       </div>
     </>
-  )
+  );
 }
 
-export default ProductItem
+export default ProductItem;

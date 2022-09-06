@@ -1,5 +1,5 @@
-import React from "react"
-import { formatPriceToStr } from "../scripts/constants"
+import React from "react";
+import { formatPriceToStr } from "../scripts/constants";
 
 function CartItem({
   id: productId,
@@ -12,48 +12,48 @@ function CartItem({
   discount,
   sellingPrice,
 }) {
-  const [count, setCount] = React.useState(1)
+  const [count, setCount] = React.useState(1);
 
   function increment() {
-    setCount(count + 1)
+    setCount(count + 1);
     setCart((prev) => {
-      const currentProduct = prev.find((usePrev) => usePrev.id === productId)
+      const currentProduct = prev.find((usePrev) => usePrev.id === productId);
       const currentProductIdx = prev.findIndex(
         (usePrev) => usePrev.id === currentProduct.id
-      )
+      );
       if (currentProduct && currentProductIdx > -1) {
-        const tempPrev = [...prev]
+        const tempPrev = [...prev];
         tempPrev[currentProductIdx].quantity =
-          (tempPrev[currentProductIdx].quantity || 0) + 1
-        return tempPrev
+          (tempPrev[currentProductIdx].quantity || 0) + 1;
+        return tempPrev;
       }
-      return prev
-    })
+      return prev;
+    });
   }
 
   function decrement() {
     if (count > 1) {
-      setCount(count - 1)
+      setCount(count - 1);
       setCart((prev) => {
-        const currentProduct = prev.find((usePrev) => usePrev.id === productId)
+        const currentProduct = prev.find((usePrev) => usePrev.id === productId);
         const currentProductIdx = prev.findIndex(
           (usePrev) => usePrev.id === currentProduct.id
-        )
+        );
         if (currentProduct && currentProductIdx > -1) {
-          const tempPrev = [...prev]
+          const tempPrev = [...prev];
           if (tempPrev[currentProductIdx].quantity > 1) {
             tempPrev[currentProductIdx].quantity =
-              (tempPrev[currentProductIdx].quantity || 0) - 1
-            return tempPrev
+              (tempPrev[currentProductIdx].quantity || 0) - 1;
+            return tempPrev;
           }
         }
-        return prev
-      })
+        return prev;
+      });
     }
   }
 
   function remove() {
-    removeItem(productId)
+    removeItem(productId);
   }
 
   return (
@@ -61,7 +61,10 @@ function CartItem({
       <div className="col-12 shop-item__container">
         <div className="shop-item__cart__container">
           <img alt="..." className="shop-item__cart__photo" src={imgSrc} />
-          <p className="names">{`${name} - Size - ${size}`}</p>
+          <p className="names_cart">
+            {`${name} `} <br />
+            {`Size = ${size}`}
+          </p>
           <div
             className="btn-group counter-btn-group"
             role="group"
@@ -107,10 +110,10 @@ function CartItem({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CartItem
+export default CartItem;
 
 /*
   1. Authentication

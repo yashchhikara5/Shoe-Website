@@ -21,7 +21,7 @@ export const MAPPING = [
     price: 529,
     rating: "⭐⭐⭐⭐",
     off: "40% off",
-    name: "Women Wear Pink & White Shoes",
+    name: "Women Pink & White Shoes",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const MAPPING = [
     price: 344,
     rating: "⭐⭐⭐⭐⭐",
     off: "40% off",
-    name: "Green Sportswear",
+    name: "Green Wear Men Layered",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const MAPPING = [
     price: 700,
     rating: "⭐⭐⭐⭐",
     off: "20% off",
-    name: "Brown Layered Boots",
+    name: "Brown Wear Layered Boots",
   },
   {
     id: 8,

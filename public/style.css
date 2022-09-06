@@ -16,7 +16,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 button {
   background-color: black;
 }
@@ -30,7 +29,20 @@ button {
 .flex-stretch {
   flex: 1 0 0;
 }
-
+/* .circle {
+  margin: 70px auto;
+  width: 40px;
+  height: 40px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+} */
 /* ##### Navbar - Start ##### */
 
 .navbar {
@@ -46,12 +58,20 @@ button {
       )
       #989898;
   background-blend-mode: multiply, multiply;
+  animation: nav-load 300ms ease-in;
 }
-
+@keyframes nav-load {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .navbar-brand {
   font-size: 56px;
   font-weight: bold;
-  font-family: monospace;
+  font-family: caveat;
 }
 
 .nav-item .nav-link {
@@ -61,10 +81,15 @@ button {
 }
 
 /* ##### Navbar - End ##### */
-
+.names_cart {
+  color: #455a64;
+  font-family: monospace;
+  font-weight: bold;
+}
 .names {
   font-family: monospace;
   font-weight: bold;
+  color: #455a64;
 }
 
 .symbol {
@@ -103,7 +128,12 @@ button {
 .photo {
   height: 165px;
 }
-
+.Login {
+  font-family: caveat;
+  color: #455a64;
+  font-weight: bold;
+  margin-top: 50px;
+}
 .card .card-body .photo {
   border-radius: var(--border-radius-secondary);
 }
@@ -181,7 +211,6 @@ h2 {
   flex-direction: column;
   padding: 1rem;
 }
-
 .shop-item__cart__container .shop-item__cart__photo {
   height: 120px;
   margin-bottom: 0.25rem;
@@ -191,7 +220,12 @@ h2 {
 .shop-item__cart__container .btn-group {
   max-width: 200px;
 }
-
+.shop-item__container:hover {
+  border: 1px solid lightgray;
+}
+.shop-item__container {
+  margin: 5px;
+}
 .shoe {
   margin-top: 9px;
   margin-bottom: 13px;
@@ -224,6 +258,7 @@ h2 {
 
 .price__container {
   align-items: center;
+  color: #455a64;
   display: flex;
   flex-direction: column;
   flex-basis: 60px;
@@ -314,10 +349,6 @@ h2 {
 
 .fa-brands {
   margin: 10px;
-}
-/* Account  */
-.account {
-  margin-top: 88px;
 }
 form {
   padding: 20px 0;
