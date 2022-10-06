@@ -1,25 +1,25 @@
-import { formatPriceToStr } from "../scripts/constants"
-import CartItem from "./CartItem"
+import { formatPriceToStr } from "../scripts/constants";
+import CartItem from "./CartItem";
 
 function Cart({ cart: cartItems, removeItem, setCart }) {
   function getTotalPrice() {
-    const INITIAL_VALUE = { quantity: 0, price: 0, sellingPrice: 0 }
+    const INITIAL_VALUE = { quantity: 0, price: 0, sellingPrice: 0 };
 
-    console.log("__cartItems__", cartItems)
+    console.log("__cartItems__", cartItems);
 
     const totalPrice = cartItems.reduce((prev, curr) => {
-      console.log("__prev-curr__", { prev, curr })
+      console.log("__prev-curr__", { prev, curr });
       return {
         price:
           (prev.quantity || 1) * prev.sellingPrice +
           (curr.quantity || 1) * curr.sellingPrice,
         quantity: 1,
-      }
-    }, INITIAL_VALUE)
+      };
+    }, INITIAL_VALUE);
 
-    console.log("__totalPrice__", totalPrice)
+    console.log("__totalPrice__", totalPrice);
 
-    return totalPrice.price
+    return totalPrice.price;
   }
 
   return (
@@ -52,9 +52,24 @@ function Cart({ cart: cartItems, removeItem, setCart }) {
               {formatPriceToStr(getTotalPrice())}
             </span>
           </div>
+          <div style={{ textAlign: "center", padding: "10px" }}>
+            <button
+              type="submit"
+              style={{
+                fontWeight: "bold",
+                letterSpacing: "3",
+                padding: "10px",
+                border: "none",
+                backgroundColor: "black",
+                color: "white",
+              }}
+            >
+              Checkout
+            </button>
+          </div>
         </>
       )}
     </div>
-  )
+  );
 }
-export default Cart
+export default Cart;

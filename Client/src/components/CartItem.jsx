@@ -115,8 +115,4 @@ function CartItem({
 
 export default CartItem;
 
-/*
-  1. Authentication
-  2. SignIn, SignUp
-  3. Automatic SignIn
-*/
+

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 function Account() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,9 +16,16 @@ function Account() {
   function handleChange(event) {
     event.preventDefault();
   }
+  const handleClick = async () => {
+    const getback = await axios.get("/register");
+    console.log("hello");
+  };
+  function handleLogin() {
+    console.log("login");
+  }
   return (
     <div>
-      <h1 className="text-center Login">Login Here</h1>
+      <h1 className="text-center Login">Register Here</h1>
       <div className="account">
         <form className="form" onSubmit={handleChange}>
           <input
@@ -39,7 +47,12 @@ function Account() {
             onChange={changePassword}
           />
           <div className="button_align">
-            <button type="submit">Register</button>
+            <button className="Register" type="submit" onClick={handleClick}>
+              Register
+            </button>
+          </div>
+          <div className="login">
+            Already have an account?<p onClick={handleLogin}> Login</p>
           </div>
         </form>
       </div>
