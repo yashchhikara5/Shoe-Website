@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 function Login() {
   const [data, setData] = useState({
     username: "",
     Password: "",
   });
+  const Navigate = useNavigate();
   const handleinput = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
@@ -26,7 +28,8 @@ function Login() {
     }
   };
   function handleLogin() {
-    console.log("Register");
+    console.log("Heelo")
+    Navigate("/");
   }
   return (
     <div>
@@ -49,12 +52,17 @@ function Login() {
           />
           {error && <div>{error}</div>}
           <div className="button_align">
-            <button className="Register" type="submit">
+            <button className="Register" type="submit" onClick={handleLogin}>
               Login
             </button>
           </div>
           <div className="login">
-            Don't have an account?<p onClick={handleLogin}> Register</p>
+            Don't have an account?
+            <p onClick={handleLogin}>
+              <Link to="/account" style={{ textDecoration: "none" }}>
+                Register
+              </Link>{" "}
+            </p>
           </div>
         </form>
       </div>

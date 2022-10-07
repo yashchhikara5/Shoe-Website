@@ -127,26 +127,27 @@ export const MAPPING = [
     off: "10% off",
     name: "Black Pastel Grip Shoes",
   },
-]
+];
 
 export const formatPriceToStr = (price) => {
-  return `₹${parseInt(price)}.00`
-}
+  return `₹${parseInt(price)}.00`;
+};
 
 export const SHOE_SIZES = [
   { label: 7, value: 7 },
   { label: 8, value: 8 },
   { label: 9, value: 9 },
-]
+];
 
 export const STRINGS = {
   shoeWear: "ShoeWear",
   size: "Size",
-}
+};
 
 export const ROUTES = {
   home: { path: "/", title: "Home" },
   Account: { path: "/account", title: "Account" },
   products: { path: "/products", title: "Products" },
   cart: { path: "/cart", title: "Cart" },
-}
+  Login: { path: "/Login" },
+};

@@ -6,6 +6,7 @@ import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
+import Login from "./components/Login";
 import { ROUTES } from "./scripts/constants";
 function App() {
   const [cart, setCart] = useState([]);
@@ -23,10 +24,7 @@ function App() {
             <Route path={ROUTES.home.path} element={<Carousel />} />
           </Routes>
           <Routes>
-            <Route
-              path={ROUTES.Account.path}
-              element={<Account />}
-            />
+            <Route path={ROUTES.Account.path} element={<Account />} />
           </Routes>
           <Routes>
             <Route
@@ -41,6 +39,9 @@ function App() {
                 <Cart cart={cart} setCart={setCart} removeItem={removeItem} />
               }
             />
+          </Routes>
+          <Routes>
+            <Route path={ROUTES.Login.path} element={<Login />} />
           </Routes>
         </main>
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Login from "./Login";
 function Account() {
   const [data, setData] = useState({
@@ -16,7 +16,7 @@ function Account() {
   const handleChange = async (event) => {
     event.preventDefault();
     try {
-      const url = "http://localhost:7000/api/user/Register";
+      const url = "http://localhost:7000/api/user/register";
       const { data: res } = await axios.post(url, data);
       Navigate("/Login");
       console.log(res.message);
@@ -30,9 +30,6 @@ function Account() {
       }
     }
   };
-  function handleLogin() {
-    console.log("login");
-  }
   return (
     <div>
       <h1 className="text-center Login">Register Here</h1>
@@ -66,7 +63,13 @@ function Account() {
             </button>
           </div>
           <div className="login">
-            Already have an account?<p onClick={handleLogin}> Login</p>
+            Already have an account?
+            <p>
+              {" "}
+              <Link to="/Login" style={{ textDecoration: "none" }}>
+                Login
+              </Link>
+            </p>
           </div>
         </form>
       </div>
