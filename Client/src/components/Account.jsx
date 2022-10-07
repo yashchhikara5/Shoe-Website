@@ -16,7 +16,7 @@ function Account() {
   const handleChange = async (event) => {
     event.preventDefault();
     try {
-      const url = "http://localhost:7000/api/user/register";
+      const url = "http://localhost:7000/api/user/Register";
       const { data: res } = await axios.post(url, data);
       Navigate("/Login");
       console.log(res.message);
